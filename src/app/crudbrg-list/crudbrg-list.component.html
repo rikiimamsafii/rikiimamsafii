@@ -1,0 +1,71 @@
+<div class="container custom-container-2">
+  <!-- Show it when there is no barang -->
+  <!-- <div class="no-data text-center" *ngIf="Barang.length == 0"> -->
+  <!-- <p>There is no barang added yet!</p> -->
+  <!-- <button class="btn btn-outline-primary" routerLink="/tambah-barang">Tambah Barang</button> -->
+  <!-- </div> -->
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div class="register-form">
+    <div
+      align="center"
+      class="container"
+      style="background: #307ee4; color: white"
+    >
+      <h2 class="heading"><strong>DAFTAR CRUD</strong></h2>
+    </div>
+    <div class="no-data text-right">
+      <button class="btn btn-primary btn-sm" routerLink="/create-crudbrg">
+        Tambah Barang
+      </button>
+    </div>
+    <br />
+    <div *ngIf="Crudbarang.length !== 0">
+      <div class="col-md-12">
+        <table class="table table-striped table-sm table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Kode Barang</th>
+              <th scope="col">Nama Barang</th>
+              <th scope="col">Harga</th>
+              <th scope="col">Stok</th>
+              <th scope="col">Satuan</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let crudbarang of Crudbarang">
+              <td>{{ crudbarang.kobar }}</td>
+              <td>{{ crudbarang.nabar }}</td>
+              <td>{{ crudbarang.harga }}</td>
+              <td>{{ crudbarang.stok }}</td>
+              <td>{{ crudbarang.satuan }}</td>
+              <td>
+                <div class="no-data">
+                  <button
+                    class="btn btn-success btn-sm"
+                    routerLink="/crudbrg-edit/{{ crudbarang.id }}"
+                  >
+                    &ensp;Edit&ensp;
+                  </button>
+                  &nbsp;<button
+                    class="btn btn-danger btn-sm"
+                    (click)="deleteCrudbrg(crudbarang.id)"
+                  >
+                    &ensp;Hapus&ensp;
+                  </button>
+                  &nbsp;<button
+                    class="btn btn-info btn-sm"
+                    routerLink="/crudbrg-detail/{{ crudbarang.id }}"
+                  >
+                    &ensp;Detail&ensp;
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

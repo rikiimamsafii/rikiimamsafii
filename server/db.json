@@ -1,0 +1,20 @@
+{
+  "crudbarang": [
+    {
+      "id": 1,
+      "kobar": "0001",
+      "nabar": "MacBook Pro 2021",
+      "harga": "26000000",
+      "stok": "10",
+      "satuan": "Box"
+    },
+    {
+      "id": 2,
+      "kobar": "0002",
+      "nabar": "Lenovo Yoga C640 i5",
+      "harga": "15000000",
+      "stok": "20",
+      "satuan": "Box"
+    }
+  ]
+}

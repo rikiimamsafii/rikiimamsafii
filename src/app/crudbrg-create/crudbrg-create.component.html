@@ -1,0 +1,110 @@
+<div class="container custom-container-2">
+  <div class="register-form">
+    <div
+      align="center"
+      class="container"
+      style="background: #48fd00; color: white"
+    >
+      <h2 class="heading"><strong> ADD CRUD </strong></h2>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="kobar">Kode Barang</label>
+        <input
+          type="text"
+          [(ngModel)]="crudDetails.kobar"
+          formControlName="kobar"
+          class="form-control"
+          placeholder="0001"
+          [ngClass]="{ 'is-invalid': submitted && f.kobar.errors }"
+        />
+        <div *ngIf="submitted && f.kobar.errors" class="invalid-feedback">
+          <div *ngIf="f.kobar.errors.required">Kode Barang is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nabar">Nama Barang</label>
+        <input
+          type="text"
+          [(ngModel)]="crudDetails.nabar"
+          formControlName="nabar"
+          class="form-control"
+          placeholder="Sabun"
+          [ngClass]="{ 'is-invalid': submitted && f.nabar.errors }"
+        />
+        <div *ngIf="submitted && f.nabar.errors" class="invalid-feedback">
+          <div *ngIf="f.nabar.errors.required">Nama Barang is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="harga">Harga</label>
+        <input
+          type="text"
+          [(ngModel)]="crudDetails.harga"
+          formControlName="harga"
+          class="form-control"
+          placeholder="3000"
+          [ngClass]="{ 'is-invalid': submitted && f.harga.errors }"
+        />
+        <div *ngIf="submitted && f.harga.errors" class="invalid-feedback">
+          <div *ngIf="f.harga.errors.required">Harga is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="stok">Stok</label>
+        <input
+          type="text"
+          [(ngModel)]="crudDetails.stok"
+          formControlName="stok"
+          class="form-control"
+          placeholder="50"
+          [ngClass]="{ 'is-invalid': submitted && f.stok.errors }"
+        />
+        <div *ngIf="submitted && f.stok.errors" class="invalid-feedback">
+          <div *ngIf="f.stok.errors.required">Stok is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="satuan">Satuan</label>
+        <select
+          type="text"
+          [(ngModel)]="crudDetails.satuan"
+          formControlName="satuan"
+          class="custom-select"
+          [ngClass]="{ 'is-invalid': submitted && f.satuan.errors }"
+        >
+          <option value="" disabled>Pilih Satuan...</option>
+          <option value="Liter">Liter</option>
+          <option value="Kg">Kg</option>
+          <option value="Rim">Rim</option>
+          <option value="Box">Box</option>
+          <option value="Ball">Ball</option>
+          <option value="Unit">Unit</option>
+          <option value="Pcs">Pcs</option>
+          <option value="Lusin">Lusin</option>
+        </select>
+        <div *ngIf="submitted && f.satuan.errors" class="invalid-feedback">
+          <div *ngIf="f.satuan.errors.required">Satuan is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-sm" type="submit">
+          &ensp;Save&ensp;
+        </button>
+        &nbsp;<button
+          class="btn btn-warning btn-sm"
+          type="button"
+          routerLink="/crudbrg-list"
+        >
+          &ensp;Cancel&ensp;
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
